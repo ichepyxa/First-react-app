@@ -1,0 +1,31 @@
+.search-panel {
+    margin: 30px 0 0;
+    padding: 25px;
+    background-color: #19F081;
+    border-radius: 4px;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, .15);
+    color: #fff;
+}
+
+.search-input {
+    display: block;
+    width: 100%;
+    margin: 0;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #fff;
+    font-size: 20px;
+    color: #333;
+    padding: 7px 15px;
+    transition: .2s ease-in-out;
+}
+
+.search-input::placeholder {
+    color: #888;
+    transition: .2s ease-in-out;
+}
+
+.search-input:focus::placeholder {
+    color: #333;
+}
