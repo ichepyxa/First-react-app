@@ -1,23 +1,41 @@
 import './employees-list-item.css';
 
-const EmployeesListItem = () => {
+const EmployeesListItem = ({name, salary, onDelete, onToggleProp, increase, like}) => {
+
+    let classNames = "list-item";
+    if (increase) {
+        classNames += " increase";
+    }
+
+    if (like) {
+        classNames += " like";
+    }
+
     return (
-        <li className="list-item">
-            <span className="list-item__label">Vasya Pupkin</span>
+        <li className={classNames}>
+            <span 
+                className="list-item__label" 
+                onClick={onToggleProp} 
+                data-toggle="like">
+                {name}
+            </span>
             <input 
                 type="text"
                 className="list-item__input"
-                defaultValue="1000$" />
+                defaultValue={salary + '$'} />
             <div className="list-item__btns">
                 <button 
                     type="button"
-                    className="btn-cookie">
+                    className="btn-cookie"
+                    onClick={onToggleProp}
+                    data-toggle="increase">
                     <i className="fas fa-cookie"></i>
                 </button>
 
                 <button 
                     type="button"
-                    className="btn-trash">
+                    className="btn-trash"
+                    onClick={() => onDelete()}>
                     <i className="fas fa-trash"></i>
                 </button>
                 <i className="fas fa-star"></i>
