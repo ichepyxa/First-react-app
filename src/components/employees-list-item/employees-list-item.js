@@ -1,7 +1,6 @@
 import './employees-list-item.css';
 
-const EmployeesListItem = ({name, salary, onDelete, onToggleProp, increase, like}) => {
-
+const EmployeesListItem = ({name, salary, onDelete, onToggleProp, increase, like, onChangeInput}) => {
     let classNames = "list-item";
     if (increase) {
         classNames += " increase";
@@ -22,7 +21,8 @@ const EmployeesListItem = ({name, salary, onDelete, onToggleProp, increase, like
             <input 
                 type="text"
                 className="list-item__input"
-                defaultValue={salary + '$'} />
+                defaultValue={salary + '$'} 
+                onChange={(e) => onChangeInput(name, e.value)}/>
             <div className="list-item__btns">
                 <button 
                     type="button"
